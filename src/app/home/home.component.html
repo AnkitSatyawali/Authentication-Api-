@@ -1,0 +1,17 @@
+<div class="container" *ngIf="!userIsAuthenticated">
+	<div class="interface">
+		<button mat-fab color="accent" class="but" routerLink = "/login">LogIn</button>
+    </div>
+    <div class="interface">
+    	<button mat-fab color="primary" class="but"routerLink="/signup">SignUp</button>
+    </div>
+</div>
+<div class="show" *ngIf="userIsAuthenticated">
+	<div class="detail">
+		User Email-id : {{email}}
+	</div>
+	<div class="detail">
+		No. of times you logged in : {{counter}}
+	</div>
+	<div class="detail1"><button mat-fab color="accent" (click)="onLogOut()" class="but">Log Out</button></div>
+</div>

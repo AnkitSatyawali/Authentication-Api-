@@ -1,0 +1,30 @@
+	<mat-progress-spinner
+        class="example-margin"
+        color="accent"
+        mode="indeterminate"
+        *ngIf = "isLoading">
+    </mat-progress-spinner>
+
+<div class="outer">
+  <mat-card *ngIf="!isLoading">
+	<mat-card-title class="alig">Sign Up</mat-card-title>
+	<form (submit)="onSignup(signupForm)" #signupForm="ngForm" >
+		<mat-form-field>
+		<input matInput name="email" ngModel type="email" 
+		placeholder="E-mail" #emailInput="ngModel" required email>
+		<mat-error *ngIf="emailInput.invalid">Please enter a valid emaill</mat-error>
+		</mat-form-field>
+		<mat-form-field hintLabel="Min 8 characters">
+		    <input [type]="hide ? 'password' : 'text'" name="password" ngModel minlength="8" matInput placeholder="Password" #passwordInput="ngModel" required>
+		     <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+    		<mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+    		</button>
+		     <mat-error *ngIf="passwordInput.invalid">Please enter a valid password</mat-error>
+	    </mat-form-field>
+	    <button mat-raised-button class="alig" color="primary" type="submit">SignUp</button>
+	</form>
+	<mat-card-subtitle class="sub">
+		Already registered <a routerLink="/login">LogIn</a> 
+	</mat-card-subtitle>
+</mat-card>
+</div>

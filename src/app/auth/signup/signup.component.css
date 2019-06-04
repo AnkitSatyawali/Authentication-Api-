@@ -1,0 +1,44 @@
+mat-form-field{
+	width:100%;
+}
+mat-spinner {
+	margin:auto;
+}
+.outer{
+	padding:100px;
+}
+.sub {
+	padding-top: 30px;
+	text-align: center;
+}
+.alig {
+	margin-top: 20px;
+	margin-left:45%;
+}
+.example-margin {
+	margin-left : 45%;
+}
+@media only screen and (max-width: 760px) {
+  /* For desktop: */
+  .alig {
+  	margin-left: 40%;
+  }
+  .example-margin {
+  	margin-left: 40%;
+  }
+  .outer{
+  	padding:30px;
+  }
+}
+@media only screen and (max-width: 400px) {
+  /* For desktop: */
+  .alig {
+  	margin-left: 35%;
+  }
+  .example-margin {
+  	margin-left: 35%;
+  }
+  .outer{
+  	padding:10px;
+  }
+}
